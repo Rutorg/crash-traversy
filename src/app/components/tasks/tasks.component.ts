@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Task } from 'src/app/Task';
+import { TaskService } from 'src/app/services/task.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-tasks',
@@ -7,11 +9,24 @@ import { Task } from 'src/app/Task';
   styleUrls: ['./tasks.component.scss']
 })
 export class TasksComponent implements OnInit {
-  tasks: Task[] = TASKS;
+  tasks: Task[];
 
-  constructor() { }
+  constructor(private taskService: TaskService) {
+      this.tasks = {} as Task[];
+  }
 
   ngOnInit(): void {
+    this.taskService.getTasks().subscribe((tasks) => {
+      this.tasks = tasks;
+    });
+  }
+  
+  deleteTask(task: Task) {
+    this.taskService
+    .deleteTask(task)
+    .subscribe(
+      () => { this.tasks = this.tasks.filter(t => { t.id !== task.id })
+    });
   }
 
 }
