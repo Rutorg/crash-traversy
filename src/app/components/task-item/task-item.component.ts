@@ -20,9 +20,7 @@ export class TaskItemComponent implements OnInit {
   ngOnInit(): void {
   }
   
-  onDelete() {
-    this.onDeleteEvent.emit();
+  onDelete(task: Task) {
+    console.log(task);
   }
-  
-  
 }
