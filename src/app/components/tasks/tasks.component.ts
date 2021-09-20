@@ -12,7 +12,7 @@ export class TasksComponent implements OnInit {
   tasks: Task[];
 
   constructor(private taskService: TaskService) {
-      this.tasks = {} as Task[];
+    this.tasks = [];
   }
 
   ngOnInit(): void {
@@ -20,6 +20,4 @@ export class TasksComponent implements OnInit {
       this.tasks = tasks;
     });
   }
-  
-
 }
