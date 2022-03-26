@@ -1,6 +1,6 @@
 # CrashTraversy
 
-Проект CrashTraversy "Список дел" созданный при помощи Angular.
+Проект [CrashTraversy](https://www.youtube.com/watch?v=3dHNOWTI7H8) "Список дел" созданный при помощи Angular.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.5.
 
